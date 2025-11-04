@@ -28,7 +28,7 @@ function AuthForm(){
             const user = await signupEmail(email, password);
             const token = await getIdToken(user);
 
-            await axios.POST("http://localhost:8000/api/users/firebase-register", {
+            await axios.post("http://localhost:8000/api/users/firebase-register", {
                 idToken: token,
                 email, username: email.split("@")[0],
                 country,
@@ -51,7 +51,7 @@ function AuthForm(){
             const user = await loginGoogle();
             const token = await getIdToken(user);
 
-            await axios.POST("http://localhost:8000/api/users/firebase-register", {
+            await axios.post("http://localhost:8000/api/users/firebase-register", {
                 idToken: token,
                 email: user.email,
                 username: user.displayName.replace(/\s+/g, "").toLowerCase(),

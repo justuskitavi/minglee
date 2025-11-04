@@ -1,9 +1,5 @@
 import { auth, googleProvider } from "../firebaseConfig";
-import { 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword,
-    signInWithPopup
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 
 //Sign up with email/password
 export async function signupEmail(email, password){

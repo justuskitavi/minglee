@@ -10,7 +10,7 @@ function Auth(){
         const token = await getIdToken(user)
 
         //send token +profile info to the backend
-        await axios.POST("http://localhost:8000/api/users/firebase-register", {
+        await axios.post("http://localhost:8000/api/users/firebase-register", {
             idToken: token,
             email: user.email,
             username: user.email.split("@")[0],
@@ -25,7 +25,7 @@ function Auth(){
         const token = await getIdToken(user)
 
         //send token to backend
-        await axios.POST("http://localhost:8000/api/users/firebase-register", {
+        await axios.post("http://localhost:8000/api/users/firebase-register", {
             idToken: token,
             email: user.email,
             username: user.displayName.replace(/\s+/g, "").toLowerCase(),
